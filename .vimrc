@@ -23,6 +23,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'Yggdroot/indentLine'
 "Plug 'dense-analysis/ale'
 Plug 'sheerun/vim-polyglot'
+Plug 'preservim/nerdcommenter'
 
 call plug#end()
 
@@ -58,12 +59,10 @@ map sk <C-w>k
 map sj <C-w>j
 map sl <C-w>l
 
-" To moving for tab in vim
-nmap <Tab> :tabnext<Return> 
+nmap <S-Tab> :tabprev<Return>
+nmap <Tab> :tabnext<Return>
 
-
-
-"Coc VIm
+" Coc VIm
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=300
@@ -71,7 +70,6 @@ set updatetime=300
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
-" To use copy for my clipboard
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
 if executable(s:clip)
     augroup WSLYank
@@ -115,7 +113,10 @@ let g:indentLine_color_term = 239
 "let g:ale_linters = {'python': ['flake8'], 'javascript': ['eslint']}
 "let g:ale_completion_enabled = 0
 
-
+filetype plugin on
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+map cc <Plug>NERDCommenterInvert
 
 
 " Always show the signcolumn, otherwise it would shift the text each time
