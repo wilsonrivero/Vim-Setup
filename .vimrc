@@ -27,7 +27,7 @@ Plug 'preservim/nerdcommenter'
 
 call plug#end()
 
-colorscheme dracula
+" colorscheme dracula
 set nu!
 set mouse=a
 set cursorline
